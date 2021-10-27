@@ -28,11 +28,9 @@ elif oper1 == operator[1]:
 elif oper1 == operator[2]:
     vysledek = int_num1 * int_num2
 else:
-    if int_num2 == 0:
-        vysledek = "Nulou nelze delit"
-    else:
-        vysledek = deleni(int_num1, int_num2)
-
+    vysledek = deleni(int_num1, int_num2)
+    if vysledek == None:
+        vysledek = "nulou nelze delit"
 print("První číslo: ", int_num1)
 print("Druhé číslo: ", int_num2)
 print("Operace: ", oper1)
