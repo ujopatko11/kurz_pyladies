@@ -1,5 +1,5 @@
 from util import tah
-
+from ai import tah_pocitace
 
 def vyhodnot(pole):
     if "xxx" in pole:
@@ -25,3 +25,13 @@ def tah_hrace(pole, symbol):
         except ValueError:
             print("Nejde zahrát na tomto poli")
     print("Nový stav hry je:", tah_hrace('o-------------------', 'x'))
+
+
+def piskvorky1d():
+    pole = 20 * "-"
+    while True:
+        print(pole)
+        pole = tah_hrace(pole, "x")
+        print(pole)
+        pole = tah_pocitace(pole, "o")
+        print(pole)
