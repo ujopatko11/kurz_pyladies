@@ -5,3 +5,5 @@ def tah_pocitace(pole, symbol):
         pozice = randrange(len(pole))
         if pole[pozice] == "-":
             return tah(pole, pozice, symbol)
+        else:
+            raise ValueError
