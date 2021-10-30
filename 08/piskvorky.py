@@ -28,10 +28,21 @@ def tah_hrace(pole, symbol):
 
 
 def piskvorky1d():
-    pole = 20 * "-"
+    pole = "-" * 20
     while True:
         print(pole)
         pole = tah_hrace(pole, "x")
         print(pole)
+        if vyhodnot(pole) != '-':
+            break
         pole = tah_pocitace(pole, "o")
-        print(pole)
+        if vyhodnot(pole) != '-':
+            break
+
+    print(pole)
+    if vyhodnot(pole) == '!':
+        print('Remíza!')
+    elif vyhodnot(pole) == 'x':
+        print('Vyhrála jsi!')
+    elif vyhodnot(pole) == 'o':
+        print('Vyhrál počítač!')
