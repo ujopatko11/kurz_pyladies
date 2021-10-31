@@ -10,8 +10,8 @@ while True:
 
 
 oper1 = input("Zadej operátor +, -, * nebo /.")
-operator = ["+", "-", "*", "/"]
-vysledek = ""
+#operator = ["+", "-", "*", "/"]
+#vysledek = ""
 
 
 def deleni(delenec, delitel):
@@ -21,11 +21,11 @@ def deleni(delenec, delitel):
         print(f'{delitel} nelze dělit.')
 
 
-if oper1 == operator[0]:
+if oper1 == "+":
     vysledek = int_num1 + int_num2
-elif oper1 == operator[1]:
+elif oper1 == "-":
     vysledek = int_num1 - int_num2
-elif oper1 == operator[2]:
+elif oper1 == "*":
     vysledek = int_num1 * int_num2
 else:
     vysledek = deleni(int_num1, int_num2)
