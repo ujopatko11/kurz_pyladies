@@ -4,7 +4,7 @@ from util import tah
 
 def tah_pocitace(pole, symbol):
     symbol_hrac = "x"
-    if "-" not in pole:
+    if "-" not in pole and len(pole) >= 1:
         raise ValueError("pole is full")
     if len(pole) == 0:
         raise ValueError("pole is empty")
@@ -16,5 +16,3 @@ def tah_pocitace(pole, symbol):
             pozice = int(randrange(0, len(pole)))
             if pole[pozice] == "-":
                 return tah(pole, pozice, symbol)
-
-

@@ -24,7 +24,7 @@ def tah_hrace(pole, symbol):
             return tah(pole, int_pozice, symbol)
         except ValueError:
             print("Nejde zahrát na tomto poli")
-    print("Nový stav hry je:", tah_hrace('o-------------------', 'x'))
+
 
 
 def piskvorky1d():
