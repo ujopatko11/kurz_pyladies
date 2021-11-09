@@ -25,6 +25,11 @@ def obsahuje(list, word):
         return True
     else:
         return False
-print(obsahuje(zvirata, "pes"))
-print(obsahuje(zvirata, "nabytek"))
+#print(obsahuje(zvirata, "pes"))
+#print(obsahuje(zvirata, "nabytek"))
 
+
+def bez_prvniho(list):
+    return list[1:]
+print(bez_prvniho([]))
+print(bez_prvniho(zvirata))
