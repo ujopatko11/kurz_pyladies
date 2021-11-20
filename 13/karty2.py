@@ -48,7 +48,38 @@ def popis_kartu(karta):
 #print(popis_kartu(karty[0]))
 
 
-def balicekValka(seznam_karet):
+def balicekValka(karty):
     for x in karty:
         print(popis_kartu(x))
-balicekValka(karty)
+#balicekValka(karty)
+
+def porovnej_karty(karta_a, karta_b):
+    if karta_a[0] > karta_b[0]:
+        return 'A'
+    elif karta_a[0] == karta_b[0]:
+        return 'None'
+    else:
+        return 'B'
+
+#print(porovnej_karty((3, "Ka"), (2, "Sr")))
+
+def rozdej_balicky():
+    balicek = vytvor_balicek()
+    polovina = len(balicek) // 2
+
+    balicek_a = balicek[:polovina]
+    balicek_b = balicek[polovina:]
+
+    return balicek_a, balicek_b, []
+balicky = rozdej_balicky()
+
+
+
+def rozdej_balicky_sloupec():
+    balicek1 = balicky[0]
+    balicek2 = balicky[1]
+    print("Hráč A\tHráč B")
+    for karta1, karta2 in zip(balicek1, balicek2):
+        print(f"{popis_kartu(karta1)}\t\t{popis_kartu(karta2)}")
+
+rozdej_balicky_sloupec()
