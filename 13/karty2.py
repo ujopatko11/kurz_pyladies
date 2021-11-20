@@ -76,10 +76,8 @@ balicky = rozdej_balicky()
 
 
 def rozdej_balicky_sloupec():
-    balicek1 = balicky[0]
-    balicek2 = balicky[1]
     print("Hráč A\tHráč B")
-    for karta1, karta2 in zip(balicek1, balicek2):
+    for karta1, karta2 in zip(balicky[0], balicky[1]):
         print(f"{popis_kartu(karta1)}\t\t{popis_kartu(karta2)}")
 
 rozdej_balicky_sloupec()
