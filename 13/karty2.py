@@ -57,7 +57,7 @@ def porovnej_karty(karta_a, karta_b):
     if karta_a[0] > karta_b[0]:
         return 'A'
     elif karta_a[0] == karta_b[0]:
-        return 'None'
+        return None
     else:
         return 'B'
 
@@ -71,7 +71,7 @@ def rozdej_balicky():
     balicek_b = balicek[polovina:]
 
     return balicek_a, balicek_b, []
-balicky = rozdej_balicky()
+balicky_x = rozdej_balicky()
 
 
 
@@ -80,4 +80,49 @@ def rozdej_balicky_sloupec():
     for karta1, karta2 in zip(balicky[0], balicky[1]):
         print(f"{popis_kartu(karta1)}\t\t{popis_kartu(karta2)}")
 
-rozdej_balicky_sloupec()
+#rozdej_balicky_sloupec()
+
+def vyloz_karty(balicky):
+        balicek_a, balicek_b, na_stole = balicky
+        try:
+            karta_a = balicek_a.pop()
+        except IndexError:
+            raise SystemExit('Hráč B vyhrál')
+
+        try:
+            karta_b = balicek_b.pop()
+        except IndexError:
+            raise SystemExit('Hráč A vyhrál')
+
+
+        print("Hráč A hraje kartu:", karta_a)
+        print("Hráč B hraje kartu:", karta_b)
+        na_stole.append(karta_a)
+        na_stole.append(karta_b)
+
+#vyloz_karty(balicky_x)
+
+
+def valka(balicky):
+    balicek_a, balicek_b, na_stole = balicky
+    while True:
+        vyloz_karty((balicek_a, balicek_b, na_stole))
+        while na_stole[-2][0] == na_stole[-1][0]:
+            print("Válka !!!")
+            for _ in range(3):
+                vyloz_karty((balicek_a, balicek_b, na_stole))
+        if na_stole[-2][0] > na_stole[-1][0]:
+            vitez_kola = "A"
+        else:
+            vitez_kola = "B"
+        print(f"Hráč {vitez_kola} bere {len(na_stole)} karet!")
+        print(30 * "-")
+        if vitez_kola == "A":
+            for karta in na_stole:
+                balicek_a = [karta] + balicek_a
+        else:
+            for karta in na_stole:
+                balicek_b = [karta] + balicek_b
+        na_stole = []
+
+valka(balicky_x)
