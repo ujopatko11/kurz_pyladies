@@ -16,11 +16,11 @@ def zjisti_stav_hry():
         kod = souborJsonRead.read()
         data = json.loads(kod)
         if data['vitez'] == []:
-            pole = data['stav_hry'][-1]
-            return pole
+            return data['stav_hry'][-1]
+
         else:
-            pole = "-" * 20
-            return pole
+            return "-" * 20
+
 
 
 
