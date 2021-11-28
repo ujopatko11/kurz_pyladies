@@ -1,1 +1,14 @@
-{"stav_hry": ["--------------------", "---x----------------", "---xo---------------", "---xox--------------", "---xoxo-------------", "-x-xoxo-------------", "-xoxoxo-------------", "xxoxoxo-------------", "xxoxoxo------------o", "xxoxoxox-----------o", "xxoxoxoxo----------o", "xxoxoxoxox---------o", "xxoxoxoxoxo--------o", "xxoxoxoxoxo-x------o", "xxoxoxoxoxo-xo-----o", "xxoxoxoxoxo-xox----o", "xxoxoxoxoxo-xoxo---o", "xxoxoxoxoxo-xoxox--o", "xxoxoxoxoxo-xoxoxo-o", "xxoxoxoxoxo-xoxoxoxo", "xxoxoxoxoxooxoxoxoxo"], "vitez": ["Rem\u00edza"]}
+{
+  "stav_hry": [
+    "--------------------",
+    "---x----------------",
+    "---xo---------------",
+    "--xxo---------------",
+    "--xxo---------o-----",
+    "-xxxo---------o-----",
+    "-xxxo---------o-----"
+  ],
+  "vitez": [
+    "Hráč"
+  ]
+}
