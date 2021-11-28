@@ -1,6 +1,7 @@
 from util import tah
 from ai import tah_pocitace
 from stav_hry import *
+import os
 
 def vyhodnot(pole):
     if "xxx" in pole:
@@ -53,3 +54,4 @@ def piskvorky1d():
     elif vyhodnot(pole) == 'o':
         print('Vyhrál počítač!')
         zapis_stav('vitez', 'Počítač')
+    os.remove('stavHry.json')

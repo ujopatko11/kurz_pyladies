@@ -17,7 +17,6 @@ def zjisti_stav_hry():
         data = json.loads(kod)
         if data['vitez'] == []:
             return data['stav_hry'][-1]
-
         else:
             return "-" * 20
 
