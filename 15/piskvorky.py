@@ -29,7 +29,7 @@ def tah_hrace(pole, symbol):
 
 
 def piskvorky1d():
-    pole = "-" * 20
+    pole = zjisti_stav_hry()
     while True:
         print(pole)
         zapis_stav('stav_hry', pole)
