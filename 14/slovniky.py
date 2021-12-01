@@ -41,7 +41,7 @@ def pocet_znaku(strx):
         d[key] += 1
     return d.items()
 
-print(pocet_znaku('nejdeee'))
+#print(pocet_znaku('nejdeee'))
 
 slovnikx = {'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ',
  'h': 'ɥ', 'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u',
@@ -55,15 +55,45 @@ slovnikx = {'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g':
  '.': '˙', '?': '¿', '!': '¡', '"': '„', "'": ',', '`': ',', '(': ')',
  ')': '(', '[': ']', ']': '[', '{': '}', '}': '{', '<': '>', '>': '<',
  '&': '⅋', '_': '‾'}
-basnickax = 'basnicka.txt'
-def prohod_text(basnicka, slovnik):
-    nova_basen = ""
-    with open(basnicka, encoding='utf-8', mode="r") as soubor:
+basnicka = 'basnicka.txt'
+def prohod_text(txt_file, slovnik):
+    novy_text = ""
+    with open(txt_file, encoding='utf-8', mode="r") as soubor:
         for radek in soubor:
             for znak in radek:
                 if znak in slovnik:
-                    nova_basen = nova_basen + slovnik[znak]
+                    novy_text = novy_text + slovnik[znak]
                 else:
-                    nova_basen = nova_basen + znak
-    return nova_basen
-#print(prohod_text(basnickax, slovnikx))
+                    novy_text = novy_text + znak
+    return novy_text
+#print(prohod_text(basnicka, slovnikx))
+
+
+import random
+def ziskej_odpovedi():
+    odpovedi = {"kdo":[],"co":[],"kde":[]}
+    kdo = input("zadej kdo:")
+    odpovedi['kdo'].append(kdo)
+    co = input("zadej co:")
+    odpovedi['co'].append(co)
+    kde = input("zadej kde:")
+    odpovedi['kde'].append(kde)
+    return odpovedi
+
+vsechny_odpovedi = ziskej_odpovedi()
+
+
+def vyber_odpovedi(odpoved):
+    kdo = random.choice(odpoved["kdo"])
+    co = random.choice(odpoved["co"])
+    kde = random.choice(odpoved["kde"])
+    return kdo, co, kde
+
+vybrane_odpovedi = vyber_odpovedi(vsechny_odpovedi)
+
+
+def vypis_vysledek(xyz):
+    kdo, co, kde = xyz
+    print(f'{kdo} {co} {kde}.')
+
+vypis_vysledek(vybrane_odpovedi)
