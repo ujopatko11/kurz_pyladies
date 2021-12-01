@@ -34,18 +34,14 @@ def pocet_znaku(str):
 
 print(pocet_znaku("halllo"))
 """
+import collections as col
+def pocet_znaku(strx):
+    d = col.defaultdict(int)
+    for key in strx:
+        d[key] += 1
+    return d.items()
 
-def pocet_znaku(str):
-    counter_dict = {}
-    for znak in str:
-        if znak not in counter_dict:
-            counter_dict[znak] = 0
-        counter_dict[znak] += 1
-    return counter_dict
-
-
-
-#print(pocet_znaku('nejdeee'))
+print(pocet_znaku('nejdeee'))
 
 slovnikx = {'a': 'ɐ', 'b': 'q', 'c': 'ɔ', 'd': 'p', 'e': 'ǝ', 'f': 'ɟ', 'g': 'ƃ',
  'h': 'ɥ', 'i': 'ᴉ', 'j': 'ɾ', 'k': 'ʞ', 'l': 'l', 'm': 'ɯ', 'n': 'u',
@@ -70,4 +66,4 @@ def prohod_text(basnicka, slovnik):
                 else:
                     nova_basen = nova_basen + znak
     return nova_basen
-print(prohod_text(basnickax, slovnikx))
+#print(prohod_text(basnickax, slovnikx))
