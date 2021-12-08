@@ -72,12 +72,9 @@ def prohod_text(txt_file, slovnik):
 import random
 def ziskej_odpovedi():
     odpovedi = {"kdo":[],"co":[],"kde":[]}
-    kdo = input("zadej kdo:")
-    odpovedi['kdo'].append(kdo)
-    co = input("zadej co:")
-    odpovedi['co'].append(co)
-    kde = input("zadej kde:")
-    odpovedi['kde'].append(kde)
+    for i in range(len(odpovedi)):
+        otazka = input(f"zadej {list(odpovedi.keys())[i]}:")
+        odpovedi[list(odpovedi.keys())[i]].append(otazka)
     return odpovedi
 
 vsechny_odpovedi = ziskej_odpovedi()
